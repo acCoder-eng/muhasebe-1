@@ -78,7 +78,7 @@ public class salesServlet extends HttpServlet {
         ResultSet rs;
         try{
                 Class.forName("com.mysql.jdbc.Driver");  
-                con=DriverManager.getConnection( "jdbc:mysql://localhost:3306/muhasebe","root","");   
+                con=DriverManager.getConnection( "jdbc:mysql://bd30db37b42d33:b2906634@eu-cdbr-west-03.cleardb.net/heroku_988e1fee65f25cd?reconnect=true","bd30db37b42d33","b2906634");    
                 System.out.println("baglantı basarılı");
                 sql = "select bill.*,companies.*,buyers.* from bill left join companies on bill.seller_id=companies.company_id left join buyers on bill.buyer_id=buyers.buyer_id where bill_id = ?";
                 sql2 = "select * from bill_products left join products on bill_products.product_id=products.product_id where bill_products.bill_id =?";
@@ -143,7 +143,7 @@ public class salesServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
          try{
                 Class.forName("com.mysql.jdbc.Driver");  
-                con=DriverManager.getConnection( "jdbc:mysql://localhost:3306/muhasebe","root","");   
+                con=DriverManager.getConnection( "jdbc:mysql://bd30db37b42d33:b2906634@eu-cdbr-west-03.cleardb.net/heroku_988e1fee65f25cd?reconnect=true","bd30db37b42d33","b2906634");    
                 System.out.println("baglantı basarılı");
                 sql = "insert into buyers(buyer_ad,buyer_soyad,buyer_adress,company_id)VALUES(?,?,?,?)";
 
@@ -167,7 +167,7 @@ public class salesServlet extends HttpServlet {
         // fatura olustur...
          try{
                 Class.forName("com.mysql.jdbc.Driver");  
-                con=DriverManager.getConnection( "jdbc:mysql://localhost:3306/muhasebe","root","");   
+                con=DriverManager.getConnection( "jdbc:mysql://bd30db37b42d33:b2906634@eu-cdbr-west-03.cleardb.net/heroku_988e1fee65f25cd?reconnect=true","bd30db37b42d33","b2906634");    
                 System.out.println("baglantı basarılı");
                 sql = "insert into bill(seller_id,buyer_id,bill_cost,paid_cost)VALUES(?,?,?,?)";
 
@@ -196,7 +196,7 @@ public class salesServlet extends HttpServlet {
             String productName = null;
             try{
                 Class.forName("com.mysql.jdbc.Driver");  
-                con=DriverManager.getConnection( "jdbc:mysql://localhost:3306/muhasebe","root","");   
+                con=DriverManager.getConnection( "jdbc:mysql://bd30db37b42d33:b2906634@eu-cdbr-west-03.cleardb.net/heroku_988e1fee65f25cd?reconnect=true","bd30db37b42d33","b2906634");    
                 System.out.println("baglantı basarılı");
                 
                 sql = "select * from products where product_id=?";
@@ -227,7 +227,7 @@ public class salesServlet extends HttpServlet {
         }
         try{
                 Class.forName("com.mysql.jdbc.Driver");  
-                con=DriverManager.getConnection( "jdbc:mysql://localhost:3306/muhasebe","root","");   
+                con=DriverManager.getConnection( "jdbc:mysql://bd30db37b42d33:b2906634@eu-cdbr-west-03.cleardb.net/heroku_988e1fee65f25cd?reconnect=true","bd30db37b42d33","b2906634");     
                 System.out.println("baglantı basarılı");
 
                 // totla price guncelle totalPrice
