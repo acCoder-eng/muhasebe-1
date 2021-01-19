@@ -35,8 +35,7 @@ $(document).ready(function(){
         kontrol db1= (kontrol)session.getAttribute("user");
         if(db1==null){
             %><jsp:forward page="login.jsp"/><%
-        }
-        
+        }     
         %>
     <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white">
@@ -58,13 +57,20 @@ $(document).ready(function(){
               <p>Dashboard</p>
             </a>
           </li>
-            <li class="nav-item">
+            <%
+                if(db1.getRole_id().equals("1")||db1.getRole_id().equals("2")){
+               %>     
+            
+          <li class="nav-item">
             <a class="nav-link" href="product.jsp">
               <i class="material-icons">content_paste</i>
               <p>Table List</p>
             </a>
           </li>
-            </li>
+            <%
+                    }
+            %>  
+            
             <li class="nav-item">
             <a class="nav-link" href="employed.jsp">
               <i class="material-icons">library_books</i>
