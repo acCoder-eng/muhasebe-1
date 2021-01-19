@@ -82,7 +82,7 @@ public class loginServlet extends HttpServlet {
         ResultSet rs;
              try{
     Class.forName("com.mysql.jdbc.Driver");  
-    con=DriverManager.getConnection( "jdbc:mysql://localhost:3306/muhasebe","root","");   
+    con=DriverManager.getConnection( "jdbc:mysql://bd30db37b42d33:b2906634@eu-cdbr-west-03.cleardb.net/heroku_988e1fee65f25cd?reconnect=true","bd30db37b42d33","b2906634"); 
                 System.out.println("baglantı basarılı");
                 
                 sql = "SELECT users.name,users.surname,users.user_id,users.company_id,users.email,users.role_id,companies.company_location,companies.company_name FROM users,companies where users.email = ? and users.password = ? and users.company_id=companies.company_id" ;
